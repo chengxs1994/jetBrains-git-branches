@@ -1,0 +1,1 @@
+# jetBrains-git-branches
