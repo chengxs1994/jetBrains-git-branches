@@ -4,7 +4,7 @@ English | [简体中文](README.zh-CN.md)
 
 JetBrains Git Branches is a VS Code extension for developers who miss the branch workflow from JetBrains IDEs such as IntelliJ IDEA, PhpStorm, and PyCharm.
 
-It brings a familiar branch tree and common branch actions into the VS Code Source Control sidebar: browse local and remote branches as folders, fetch all remotes, checkout branches, create a branch from another branch, merge a selected branch into the current branch, delete branches, and resolve conflicts with VS Code Merge Editor.
+It brings a familiar branch tree and common branch actions into the VS Code/Cursor Source Control sidebar: browse local and remote branches as folders, fetch all remotes, checkout branches, create a branch from another branch, merge a selected branch into the current branch, and resolve conflicts with VS Code Merge Editor.
 
 This extension is not a full Git client replacement. It focuses on the branch operations JetBrains users tend to use every day.
 
@@ -12,6 +12,11 @@ This extension is not a full Git client replacement. It focuses on the branch op
 
 - JetBrains-style branch tree for local and remote branches.
 - Multi-level branch folders split by `/`, for example `origin/feature/demo` becomes `origin > feature > demo`.
+- Search local and remote branches by keyword while keeping the multi-level tree structure.
+- Show the current branch in a dedicated `Current Branch` group.
+- Keep favorite branches in a dedicated `Favorite Branches` group.
+- Keep recently checked out or created branches in a dedicated `Recent Branches` group.
+- Copy branch names from the branch context menu.
 - Fetch all remotes with `git fetch --all`.
 - Checkout local branches and remote tracking branches.
 - Create a new branch from any selected branch. Remote branches are used only as the starting point and are not kept as upstream.
@@ -26,8 +31,9 @@ This extension is not a full Git client replacement. It focuses on the branch op
 1. Open a Git repository folder in VS Code or Cursor.
 2. Open the Source Control sidebar and find the `JetBrains Git Branches` view.
 3. Expand `Local Branches` or `Remote Branches`.
-4. Right-click a branch to use branch actions: `Checkout`, `Create Branch from Here...`, `Merge into Current Branch`, or `Delete Branch`.
-5. Click `Fetch All Remotes` in the view title bar to fetch all remotes.
+4. Click `Search Branches` in the view title bar to filter branches, or `Clear Branch Search` to restore the full tree.
+5. Right-click a branch to use branch actions: `Copy Branch Name`, `Favorite / Unfavorite Branch`, `Checkout`, `Create Branch from Here...`, `Merge into Current Branch`, or `Delete Branch`.
+6. Click `Fetch All Remotes` in the view title bar to fetch all remotes.
 
 ## Language Setting
 
@@ -62,6 +68,11 @@ Note: the contributed view title `JetBrains Git Branches` is a static VS Code/Cu
 | JetBrains action | VS Code/Cursor extension action |
 | --- | --- |
 | Fetch All Remotes | `Fetch All Remotes` |
+| Search Branches | `Search Branches` / `Clear Branch Search` |
+| Copy Branch Name | `Copy Branch Name` |
+| Favorite Branch | `Favorite / Unfavorite Branch` |
+| Recent Branches | `Recent Branches` group |
+| Current Branch | `Current Branch` group |
 | Checkout | `Checkout` |
 | New Branch from Selected | `Create Branch from Here...` |
 | Merge selected branch into current | `Merge into Current Branch` |
@@ -85,13 +96,13 @@ npx @vscode/vsce package --allow-missing-repository
 Install the generated VSIX locally:
 
 ```bash
-code --install-extension git-branches-viewer-0.0.3.vsix
+code --install-extension git-branches-viewer-0.0.6.vsix
 ```
 
 For Cursor:
 
 ```bash
-cursor --install-extension git-branches-viewer-0.0.3.vsix --force
+cursor --install-extension git-branches-viewer-0.0.6.vsix --force
 ```
 
 ## Publishing Notes

@@ -12,6 +12,11 @@ JetBrains Git Branches 是一个面向 JetBrains 用户迁移到 VS Code/Cursor 
 
 - JetBrains 风格的本地/远程分支树。
 - 按 `/` 自动拆分多级目录，例如 `origin/feature/demo` 会显示为 `origin > feature > demo`。
+- 支持按关键字搜索本地和远程分支，并保留多级目录结构。
+- 在独立的 `当前分支` 分组中展示当前签出的分支。
+- 在独立的 `收藏分支` 分组中展示常用收藏分支。
+- 在独立的 `最近分支` 分组中展示最近签出或新建的分支。
+- 支持在分支右键菜单中复制分支名。
 - `提取所有远程`，等价于 `git fetch --all`。
 - `签出`，支持本地分支和远程 tracking 分支。
 - `从此新建分支...`，从选中分支创建新分支并切换过去；从远程分支新建时仅把远程分支作为起点，不保留 upstream 跟踪关系。
@@ -26,8 +31,9 @@ JetBrains Git Branches 是一个面向 JetBrains 用户迁移到 VS Code/Cursor 
 1. 用 VS Code 或 Cursor 打开一个 Git 仓库目录。
 2. 打开左侧“源代码管理”，找到 `JetBrains Git Branches` 视图。
 3. 展开 `本地分支` 或 `远程分支`。
-4. 右键分支执行常用操作：`签出`、`从此新建分支...`、`合并到当前分支`、`删除分支`。
-5. 点击视图标题栏的 `提取所有远程` 按钮，执行 `git fetch --all`。
+4. 点击视图标题栏的 `搜索分支` 过滤分支，或点击 `清除分支搜索` 恢复完整分支树。
+5. 右键分支执行常用操作：`复制分支名`、`收藏/取消收藏分支`、`签出`、`从此新建分支...`、`合并到当前分支`、`删除分支`。
+6. 点击视图标题栏的 `提取所有远程` 按钮，执行 `git fetch --all`。
 
 ## 语言设置
 
@@ -62,6 +68,11 @@ JetBrains Git Branches 是一个面向 JetBrains 用户迁移到 VS Code/Cursor 
 | JetBrains 操作 | VS Code/Cursor 插件操作 |
 | --- | --- |
 | Fetch All Remotes | `提取所有远程` |
+| Search Branches | `搜索分支` / `清除分支搜索` |
+| Copy Branch Name | `复制分支名` |
+| Favorite Branch | `收藏/取消收藏分支` |
+| Recent Branches | `最近分支` 分组 |
+| Current Branch | `当前分支` 分组 |
 | Checkout | `签出` |
 | 从选中分支新建分支 | `从此新建分支...` |
 | 将选中分支合并到当前分支 | `合并到当前分支` |
@@ -85,13 +96,13 @@ npx @vscode/vsce package --allow-missing-repository
 安装生成的 VSIX：
 
 ```bash
-code --install-extension git-branches-viewer-0.0.3.vsix
+code --install-extension git-branches-viewer-0.0.6.vsix
 ```
 
 Cursor 安装：
 
 ```bash
-cursor --install-extension git-branches-viewer-0.0.3.vsix --force
+cursor --install-extension git-branches-viewer-0.0.6.vsix --force
 ```
 
 ## 发布说明
