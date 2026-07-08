@@ -8,6 +8,8 @@ It brings a familiar branch tree and common branch actions into the VS Code/Curs
 
 This extension is not a full Git client replacement. It focuses on the branch operations JetBrains users tend to use every day.
 
+![JetBrains Git Branches branch tree](img/en/branches.png)
+
 ## Features
 
 - JetBrains-style branch tree for local and remote branches.

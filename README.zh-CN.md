@@ -8,6 +8,8 @@ JetBrains Git Branches 是一个面向 JetBrains 用户迁移到 VS Code/Cursor 
 
 这个插件不是完整 Git 客户端替代品，而是专注补齐 JetBrains 用户每天最常用的分支工作流。
 
+![JetBrains Git Branches 分支树](img/cn/branches.png)
+
 ## 功能
 
 - JetBrains 风格的本地/远程分支树。
